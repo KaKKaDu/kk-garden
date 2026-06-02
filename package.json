@@ -1,0 +1,39 @@
+{
+  "name": "@kk-garden/shared",
+  "version": "1.0.0",
+  "description": "Kiryl Kartsialeu EN69783 diploma project shared package",
+  "author": "Kiryl Kartsialeu",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json && npm run copy-assets",
+    "copy-assets": "cpy 'src/assets/spritesheets/**/*' dist/assets/spritesheets && cpy 'src/globals.d.ts' dist/",
+    "format": "prettier --write ."
+  },
+  "exports": {
+    "./assets": {
+      "types": "./dist/assets/index.d.ts",
+      "default": "./dist/assets/index.js"
+    },
+    "./constants": {
+      "types": "./dist/constants/index.d.ts",
+      "default": "./dist/constants/index.js"
+    },
+    "./sets": {
+      "types": "./dist/spritesheet-set/index.d.ts",
+      "default": "./dist/spritesheet-set/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "cpy-cli": "^7.0.0",
+    "prettier": "^3.8.3"
+  }
+}
