@@ -1,19 +1,10 @@
-import type {
-  SpritesheetElement,
-  SpritesheetPath,
-} from './spritesheet-element.types';
-import type { Cell, Coordinates, SizeMeasures, WithId } from './common.types';
+import type { WithId } from './common.types';
 import type { SpriteData } from './animated-sprite.types';
 import type { GridConstants } from '../constants';
+import type {FromZod} from "../schemas/models/common.schemas";
+import type {GridDrawerElementSchema} from "../schemas/models/grid-drawer-element.schema";
 
-export type GridDrawerElement = {
-  spritesheetPath: SpritesheetPath;
-  element: SpritesheetElement;
-  cell: Cell;
-  innerCoordinates?: Coordinates;
-  sizes?: SizeMeasures;
-  index: number;
-};
+export type GridDrawerElement = FromZod<typeof GridDrawerElementSchema>;
 
 export type StaticDrawReport = {
   report: string;

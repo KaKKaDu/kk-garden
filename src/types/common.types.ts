@@ -1,10 +1,12 @@
+import {type CellSchema, type CoordinatesSchema, type FromZod, SizeMeasuresSchema} from "../schemas/models/common.schemas";
+
 export type Nullable<T> = T | null | undefined;
 
-export type Coordinates = { x: number; y: number };
+export type Coordinates = FromZod<typeof CoordinatesSchema>;
 
-export type SizeMeasures = { width: number; height: number };
+export type SizeMeasures = FromZod<typeof SizeMeasuresSchema>;
 
-export type Cell = { row: number; column: number };
+export type Cell = FromZod<typeof CellSchema>;
 
 export const directions = ['top', 'right', 'bottom', 'left'] as const;
 

@@ -1,7 +1,8 @@
-import type { Coordinates, SizeMeasures, WithDensity } from './common.types.ts';
 import type { SpritesheetAssetKey } from '../assets';
+import type {FromZod} from "../schemas/models/common.schemas";
+import type {SpritesheetElementSchema} from "../schemas/models/spritesheet-element.schema";
 
-export type SpritesheetElement = WithDensity<Coordinates & SizeMeasures>;
+export type SpritesheetElement = FromZod<typeof SpritesheetElementSchema>;
 
 export type SpritesheetObject<Tile extends string = string> = Record<
   Tile,
