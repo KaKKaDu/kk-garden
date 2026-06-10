@@ -1,12 +1,19 @@
-import type {DataObject, SuccessData} from "./success-data";
-import {AppError} from "./app-error";
+import type { DataObject, SuccessData } from './success-data';
+import { AppError } from './app-error';
 
-export const handleError = <Data extends DataObject = DataObject>(e: unknown): SuccessData<false, Data> => {
+export const handleError = <Data extends DataObject = DataObject>(
+  e: unknown
+): SuccessData<false, Data> => {
   let statusCode: number = 0;
   let message: string = 'Unknown error';
   if (e instanceof Error) {
     message = `${e.message}`;
-    return { success: false, errors: [new AppError({ message, status: 0, context: JSON.stringify(e) })] };
+    return {
+      success: false,
+      errors: [
+        new AppError({ message, status: 0, context: JSON.stringify(e) }),
+      ],
+    };
   }
   if (e && typeof e === 'object') {
     if ('code' in e) {
@@ -26,5 +33,10 @@ export const handleError = <Data extends DataObject = DataObject>(e: unknown): S
   } else if (e && typeof e === 'string') {
     message = e;
   }
-  return { success: false, errors: [new AppError({ message, status: statusCode, context: JSON.stringify(e) })] };
+  return {
+    success: false,
+    errors: [
+      new AppError({ message, status: statusCode, context: JSON.stringify(e) }),
+    ],
+  };
 };

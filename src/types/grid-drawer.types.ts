@@ -1,8 +1,7 @@
-import type { WithId } from './common.types';
+import type { FromZod, WithId } from './common.types';
 import type { SpriteData } from './animated-sprite.types';
 import type { GridConstants } from '../constants';
-import type {FromZod} from "../schemas/models/common.schemas";
-import type {GridDrawerElementSchema} from "../schemas/models/grid-drawer-element.schema";
+import type { GridDrawerElementSchema } from '../schemas';
 
 export type GridDrawerElement = FromZod<typeof GridDrawerElementSchema>;
 

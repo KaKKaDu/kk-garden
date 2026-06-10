@@ -1,6 +1,13 @@
-import {type CellSchema, type CoordinatesSchema, type FromZod, SizeMeasuresSchema} from "../schemas/models/common.schemas";
+import {
+  type CellSchema,
+  type CoordinatesSchema,
+  SizeMeasuresSchema,
+} from '../schemas';
+import { z } from 'zod';
 
 export type Nullable<T> = T | null | undefined;
+
+export type FromZod<ZodObject extends z.ZodObject> = z.infer<ZodObject>;
 
 export type Coordinates = FromZod<typeof CoordinatesSchema>;
 

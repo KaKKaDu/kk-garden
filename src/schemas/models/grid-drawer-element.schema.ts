@@ -1,7 +1,7 @@
-import {z} from "zod";
-import {SpritesheetPathSchema} from "./spritesheet-path.schema";
-import {SpritesheetElementSchema} from "./spritesheet-element.schema";
-import {addId, CellSchema, SizeMeasuresSchema} from "./common.schemas";
+import { z } from 'zod';
+import { SpritesheetPathSchema } from './spritesheet-path.schema';
+import { SpritesheetElementSchema } from './spritesheet-element.schema';
+import { addId, CellSchema, SizeMeasuresSchema } from './common.schemas';
 
 export const GridDrawerElementSchema = z.object({
   spritesheetPath: SpritesheetPathSchema,
@@ -12,4 +12,6 @@ export const GridDrawerElementSchema = z.object({
   index: z.number(),
 });
 
-export const GridDrawerElementWithIdSchema = GridDrawerElementSchema.extend(addId('string'));
+export const GridDrawerElementWithIdSchema = GridDrawerElementSchema.extend(
+  addId('string')
+);

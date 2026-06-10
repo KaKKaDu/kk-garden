@@ -1,6 +1,7 @@
 import type { SpritesheetAssetKey } from '../assets';
-import type {FromZod} from "../schemas/models/common.schemas";
-import type {SpritesheetElementSchema} from "../schemas/models/spritesheet-element.schema";
+import type { SpritesheetElementSchema } from '../schemas';
+import type { SpritesheetSetDtoSchema } from '../schemas';
+import type { FromZod } from './common.types';
 
 export type SpritesheetElement = FromZod<typeof SpritesheetElementSchema>;
 
@@ -21,3 +22,5 @@ export type SpritesheetInit<Tile extends string = string> = {
   spritesheetPath: SpritesheetPath;
   spritesheetMap: SpritesheetObject<Tile>;
 };
+
+export type SpritesheetSetDto = FromZod<typeof SpritesheetSetDtoSchema>;

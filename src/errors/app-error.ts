@@ -1,4 +1,4 @@
-import type {DataObject} from "./success-data";
+import type { DataObject } from './success-data';
 
 export type AppErrorConfig = {
   message: string;

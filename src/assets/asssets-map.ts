@@ -15,10 +15,10 @@ export const AssetsMap = {
   'decorations-spritesheet': DecorationsSpritesheet,
   'stones-spritesheet': StonesSpritesheet,
   'tiles-spritesheet': TilesSpritesheet,
-} as const satisfies Record<typeof assetsMapKeys[number], string>;
+} as const satisfies Record<(typeof assetsMapKeys)[number], string>;
 
 export type SpritesheetAssetKey = Extract<
-  typeof assetsMapKeys[number],
+  (typeof assetsMapKeys)[number],
   `${string}-spritesheet`
 >;
 

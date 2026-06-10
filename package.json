@@ -24,6 +24,10 @@
       "types": "./dist/spritesheet-set/index.d.ts",
       "default": "./dist/spritesheet-set/index.js"
     },
+    "./schemas": {
+      "types": "./dist/schemas/index.d.ts",
+      "default": "./dist/schemas/index.js"
+    },
     "./types": {
       "types": "./dist/types/index.d.ts",
       "default": "./dist/types/index.js"

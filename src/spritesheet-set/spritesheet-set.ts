@@ -1,4 +1,4 @@
-import type { Nullable, WithId } from '../types';
+import { isSpritesheetSetKey, type Nullable, type WithId } from '../types';
 import type {
   SpritesheetElement,
   SpritesheetInit,
@@ -6,6 +6,7 @@ import type {
   SpritesheetSetKey,
 } from '../types';
 import { type DensityPick, densityPick } from './density-pick';
+import type { SpritesheetSetDto } from '../types/spritesheet-element.types';
 
 export class SpritesheetSet<Tile extends string> {
   private map: Map<Tile, SpritesheetElement> = new Map<
@@ -49,5 +50,29 @@ export class SpritesheetSet<Tile extends string> {
       ...pick.data,
       id: pick.key,
     };
+  }
+
+  toDto(): SpritesheetSetDto {
+    return {
+      key: this.key,
+      path: this.pth,
+      map: Object.fromEntries(this.map),
+    };
+  }
+
+  static fromDto(dto: SpritesheetSetDto): Nullable<SpritesheetSet<string>> {
+    const { key, path, map } = dto;
+
+    const isValidDto: boolean = isSpritesheetSetKey(key) && !!path && !!map;
+
+    if (isValidDto) {
+      return new SpritesheetSet({
+        spritesheetKey: key as SpritesheetSetKey,
+        spritesheetPath: path,
+        spritesheetMap: map,
+      });
+    }
+
+    return null;
   }
 }

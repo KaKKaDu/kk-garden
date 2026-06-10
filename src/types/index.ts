@@ -13,6 +13,7 @@ export type {
   Cell,
   SizeMeasures,
   Direction,
+  FromZod,
 } from './common.types';
 export { directions } from './common.types';
 export type {
@@ -28,5 +29,7 @@ export type {
   SpritesheetPath,
   SpritesheetInit,
   SpritesheetObject,
+  SpritesheetSetDto,
 } from './spritesheet-element.types';
 export { isSpritesheetSetKey } from './spritesheet-element.types';
+export { type ErrorResponse } from './route-responses.types';
