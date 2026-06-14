@@ -1,4 +1,4 @@
-import { z } from 'zod/v4';
+import { z } from 'zod';
 import { GridDrawerElementWithIdSchema } from '../models/grid-drawer-element.schema';
 import { SpritesheetSetDtoSchema } from '../models/spritesheet-set-dto.schema';
 import { AnimatedSpriteDtoSchema } from '../models/animated-sprite-dto.schema';
@@ -16,5 +16,5 @@ export const GenerateRootResponseSchema = z.object({
 });
 
 export const GenerateRootQueryStringSchema =  z.object({
-  count: z.number().optional().default(3),
+  count: z.coerce.number().optional().default(3),
 });
