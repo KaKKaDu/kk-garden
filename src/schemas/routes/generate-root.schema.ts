@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod/v4';
 import { GridDrawerElementWithIdSchema } from '../models/grid-drawer-element.schema';
 import { SpritesheetSetDtoSchema } from '../models/spritesheet-set-dto.schema';
 import { AnimatedSpriteDtoSchema } from '../models/animated-sprite-dto.schema';
