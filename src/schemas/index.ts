@@ -15,3 +15,4 @@ export { SpritesheetPathSchema } from './models/spritesheet-path.schema';
 export { SpritesheetElementSchema } from './models/spritesheet-element.schema';
 export { SpritesheetSetDtoSchema } from './models/spritesheet-set-dto.schema';
 export { GenerateRootResponseSchema, GenerateRootQueryStringSchema } from './routes/generate-root.schema';
+export type { GenerateRootResponse, GenerateRootQueryString } from './routes/generate-root.schema';

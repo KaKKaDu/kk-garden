@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { GridDrawerElementWithIdSchema } from '../models/grid-drawer-element.schema';
 import { SpritesheetSetDtoSchema } from '../models/spritesheet-set-dto.schema';
 import { AnimatedSpriteDtoSchema } from '../models/animated-sprite-dto.schema';
+import type {FromZod} from "../../types/common.types";
 
 export const GenerateRootResponseSchema = z.object({
   staticData: z.object({
@@ -18,3 +19,6 @@ export const GenerateRootResponseSchema = z.object({
 export const GenerateRootQueryStringSchema =  z.object({
   count: z.coerce.number().optional().default(3),
 });
+
+export type GenerateRootResponse = FromZod<typeof GenerateRootResponseSchema>;
+export type GenerateRootQueryString = FromZod<typeof GenerateRootQueryStringSchema>;
