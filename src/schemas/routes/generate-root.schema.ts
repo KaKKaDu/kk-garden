@@ -14,3 +14,7 @@ export const GenerateRootResponseSchema = z.object({
     bushes: z.array(AnimatedSpriteDtoSchema),
   },
 });
+
+export const GenerateRootQueryStringSchema =  z.object({
+  count: z.coerce.number().optional().default(3),
+});
