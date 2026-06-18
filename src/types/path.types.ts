@@ -1,5 +1,5 @@
-import type { TilePathSpritesheetElementKey } from '../spritesheet-set';
-import type { Cell, Direction } from './common.types';
+import type { TilePathSpritesheetElementKey } from '../spritesheet-set/index.js';
+import type { Cell, Direction } from './common.types.js';
 
 export type PathMapElement = {
   priority: number;

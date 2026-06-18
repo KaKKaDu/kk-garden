@@ -1,12 +1,12 @@
-import { isSpritesheetSetKey, type Nullable, type WithId } from '../types';
+import { isSpritesheetSetKey, type Nullable, type WithId } from '../types/index.js';
 import type {
   SpritesheetElement,
   SpritesheetInit,
   SpritesheetPath,
   SpritesheetSetKey,
-} from '../types';
-import { type DensityPick, densityPick } from './density-pick';
-import type { SpritesheetSetDto } from '../types/spritesheet-element.types';
+} from '../types/index.js';
+import { type DensityPick, densityPick } from './density-pick.js';
+import type { SpritesheetSetDto } from '../types/spritesheet-element.types.js';
 
 export class SpritesheetSet<Tile extends string> {
   private map: Map<Tile, SpritesheetElement> = new Map<

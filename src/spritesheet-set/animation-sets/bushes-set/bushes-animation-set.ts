@@ -1,6 +1,6 @@
-import type { AnimatedSpriteSetObject } from '../../../types';
-import { AnimatedSpriteSet } from '../../animated-sprite/animated-sprite-set';
-import { simpleBushSprite } from './simple-bush/simple-bush-sprite';
+import type { AnimatedSpriteSetObject } from '../../../types/index.js';
+import { AnimatedSpriteSet } from '../../animated-sprite/animated-sprite-set.js';
+import { simpleBushSprite } from './simple-bush/simple-bush-sprite.js';
 
 const bushesAnimatedSpriteSetMap = {
   'regular-tree': {

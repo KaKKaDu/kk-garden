@@ -1,4 +1,4 @@
-import type { SpritesheetSet } from '../spritesheet-set.ts';
+import type { SpritesheetSet } from '../spritesheet-set.js';
 
 export class AnimatedSprite<Tile extends string> {
   public readonly key: string;

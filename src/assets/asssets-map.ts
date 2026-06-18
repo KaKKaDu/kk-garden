@@ -1,8 +1,3 @@
-import AnimationSpritesheet from './spritesheets/animation_spritesheet.png';
-import DecorationsSpritesheet from './spritesheets/decorations_spritesheet.png';
-import StonesSpritesheet from './spritesheets/stones_spritesheet.png';
-import TilesSpritesheet from './spritesheets/tiles_spritesheet.png';
-
 export const assetsMapKeys = [
   'animation-spritesheet',
   'decorations-spritesheet',
@@ -11,10 +6,10 @@ export const assetsMapKeys = [
 ] as const;
 
 export const AssetsMap = {
-  'animation-spritesheet': AnimationSpritesheet,
-  'decorations-spritesheet': DecorationsSpritesheet,
-  'stones-spritesheet': StonesSpritesheet,
-  'tiles-spritesheet': TilesSpritesheet,
+  'animation-spritesheet': './spritesheets/animation_spritesheet.png',
+  'decorations-spritesheet': './spritesheets/decorations_spritesheet.png',
+  'stones-spritesheet': './spritesheets/stones_spritesheet.png',
+  'tiles-spritesheet': './spritesheets/tiles_spritesheet.png',
 } as const satisfies Record<(typeof assetsMapKeys)[number], string>;
 
 export type SpritesheetAssetKey = Extract<
@@ -22,8 +17,10 @@ export type SpritesheetAssetKey = Extract<
   `${string}-spritesheet`
 >;
 
-export const getSpritesheetAsset = (key: SpritesheetAssetKey): string =>
-  AssetsMap[key];
+export const getSpritesheetAsset = (key: SpritesheetAssetKey): string => {
+  return new URL(AssetsMap[key], import.meta.url).href;
+}
+
 
 export const isSpritesheetAssetKey = (
   key: string

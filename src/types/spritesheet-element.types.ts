@@ -1,7 +1,7 @@
-import type { SpritesheetAssetKey } from '../assets';
-import type { SpritesheetElementSchema } from '../schemas';
-import type { SpritesheetSetDtoSchema } from '../schemas';
-import type { FromZod } from './common.types';
+import type { SpritesheetAssetKey } from '../assets/index.js';
+import type { SpritesheetElementSchema } from '../schemas/index.js';
+import type { SpritesheetSetDtoSchema } from '../schemas/index.js';
+import type { FromZod } from './common.types.js';
 
 export type SpritesheetElement = FromZod<typeof SpritesheetElementSchema>;
 

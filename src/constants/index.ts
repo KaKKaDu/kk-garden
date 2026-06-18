@@ -2,15 +2,15 @@ export {
   DecorationConstants,
   type DecorationWeights,
   type DecorationMetrics,
-} from './decoration-constants';
-export { GridConstants } from './grid-constants';
+} from './decoration-constants.js';
+export { GridConstants } from './grid-constants.js';
 export {
   ObjectConstants,
   type ObjectWeights,
   type ObjectMetrics,
-} from './object-constants';
+} from './object-constants.js';
 export {
   PathConstants,
   type PathWeights,
   type PathMetrics,
-} from './path-constants';
+} from './path-constants.js';

@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { SpritesheetPathSchema } from './spritesheet-path.schema';
-import { SpritesheetElementSchema } from './spritesheet-element.schema';
-import { addId, CellSchema, SizeMeasuresSchema } from './common.schemas';
+import { SpritesheetPathSchema } from './spritesheet-path.schema.js';
+import { SpritesheetElementSchema } from './spritesheet-element.schema.js';
+import { addId, CellSchema, SizeMeasuresSchema } from './common.schemas.js';
 
 export const GridDrawerElementSchema = z.object({
   spritesheetPath: SpritesheetPathSchema,

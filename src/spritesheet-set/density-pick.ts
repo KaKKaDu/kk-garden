@@ -1,4 +1,4 @@
-import type { WithDensity } from '../types';
+import type { WithDensity } from '../types/index.js';
 
 export type DensityPick<Data> = {
   data: WithDensity<Data>;

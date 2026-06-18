@@ -1,5 +1,5 @@
-import type { DataObject, SuccessData } from './success-data';
-import { AppError } from './app-error';
+import type { DataObject, SuccessData } from './success-data.js';
+import { AppError } from './app-error.js';
 
 export const handleError = <Data extends DataObject = DataObject>(
   e: unknown

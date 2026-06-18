@@ -1,11 +1,10 @@
-import type { SpritesheetInit, SpritesheetObject } from '../../types';
-import { SpritesheetSet } from '../spritesheet-set';
-import type { SizeMeasures } from '../../types';
+import type { SpritesheetInit } from '../../types/index.js';
+import { SpritesheetSet } from '../spritesheet-set.js';
 
-const tileMeasures: SizeMeasures = {
+const tileMeasures = {
   width: 32,
   height: 32,
-};
+} as const;
 
 const tilesSpreadsheetMap = {
   'grass-full-tile': {
@@ -255,12 +254,12 @@ const tilesSpreadsheetMap = {
     y: 0,
     ...tileMeasures,
   },
-} as const satisfies SpritesheetObject;
+} as const;
 
-export type TileSpritesheetElementKey = keyof typeof tilesSpreadsheetMap;
+export type TileSpritesheetElementKey = Extract<keyof typeof tilesSpreadsheetMap, string>;
 
 export type TilePathSpritesheetElementKey = Extract<
-  TileSpritesheetElementKey,
+  keyof typeof tilesSpreadsheetMap,
   `path-${string}`
 >;
 

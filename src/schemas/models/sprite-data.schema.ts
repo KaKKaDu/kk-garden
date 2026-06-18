@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { CellSchema, CoordinatesSchema } from './common.schemas';
-import { AnimatedSpriteDtoSchema } from './animated-sprite-dto.schema';
+import { CellSchema, CoordinatesSchema } from './common.schemas.js';
+import { AnimatedSpriteDtoSchema } from './animated-sprite-dto.schema.js';
 
 export const SpriteDataSchema = z.object({
   sprite: AnimatedSpriteDtoSchema,

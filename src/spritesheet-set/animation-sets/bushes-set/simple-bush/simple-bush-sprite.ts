@@ -1,6 +1,6 @@
-import type { SpritesheetObject } from '../../../../types';
-import { SpritesheetSet } from '../../../spritesheet-set';
-import { AnimatedSprite } from '../../../animated-sprite/animated-sprite';
+import type { SpritesheetObject } from '../../../../types/index.js';
+import { SpritesheetSet } from '../../../spritesheet-set.js';
+import { AnimatedSprite } from '../../../animated-sprite/animated-sprite.js';
 
 const simpleBushSpritesheetMap = {
   'frame-1': {
@@ -19,7 +19,7 @@ const simpleBushSpritesheetMap = {
   },
 } as const satisfies SpritesheetObject;
 
-type SimpleBushSpritesheetKey = keyof typeof simpleBushSpritesheetMap;
+type SimpleBushSpritesheetKey = Extract<keyof typeof simpleBushSpritesheetMap, string>;
 
 const SimpleBushSpritesheetSet = new SpritesheetSet({
   spritesheetKey: 'simple-bush-sprite-set',

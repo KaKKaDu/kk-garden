@@ -1,5 +1,5 @@
-import type { AnimatedSprite } from '../spritesheet-set';
-import type { Cell, Coordinates, WithDensity } from './common.types';
+import type { AnimatedSprite } from '../spritesheet-set/index.js';
+import type { Cell, Coordinates, WithDensity } from './common.types.js';
 
 export type AnimatedSpriteData<Tile extends string = string> = WithDensity<{
   sprite: AnimatedSprite<Tile>;

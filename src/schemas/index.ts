@@ -1,18 +1,18 @@
-export { ErrorSchema } from './errors/error.schema';
-export { AnimatedSpriteDtoSchema } from './models/animated-sprite-dto.schema';
+export { ErrorSchema } from './errors/error.schema.js';
+export { AnimatedSpriteDtoSchema } from './models/animated-sprite-dto.schema.js';
 export {
   CoordinatesSchema,
   SizeMeasuresSchema,
   CellSchema,
   addId,
-} from './models/common.schemas';
+} from './models/common.schemas.js';
 export {
   GridDrawerElementWithIdSchema,
   GridDrawerElementSchema,
-} from './models/grid-drawer-element.schema';
-export { SpriteDataSchema } from './models/sprite-data.schema';
-export { SpritesheetPathSchema } from './models/spritesheet-path.schema';
-export { SpritesheetElementSchema } from './models/spritesheet-element.schema';
-export { SpritesheetSetDtoSchema } from './models/spritesheet-set-dto.schema';
-export { GenerateRootResponseSchema, GenerateRootQueryStringSchema } from './routes/generate-root.schema';
-export type { GenerateRootResponse, GenerateRootQueryString } from './routes/generate-root.schema';
+} from './models/grid-drawer-element.schema.js';
+export { SpriteDataSchema } from './models/sprite-data.schema.js';
+export { SpritesheetPathSchema } from './models/spritesheet-path.schema.js';
+export { SpritesheetElementSchema } from './models/spritesheet-element.schema.js';
+export { SpritesheetSetDtoSchema } from './models/spritesheet-set-dto.schema.js';
+export { GenerateRootResponseSchema, GenerateRootQueryStringSchema } from './routes/generate-root.schema.js';
+export type { GenerateRootResponse, GenerateRootQueryString } from './routes/generate-root.schema.js';

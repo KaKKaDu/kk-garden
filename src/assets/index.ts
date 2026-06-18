@@ -4,4 +4,4 @@ export {
   type SpritesheetAssetKey,
   isSpritesheetAssetKey,
   getSpritesheetAsset,
-} from './asssets-map';
+} from './asssets-map.js';

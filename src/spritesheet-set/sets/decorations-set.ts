@@ -1,5 +1,5 @@
-import type { SpritesheetInit, SpritesheetObject } from '../../types';
-import { SpritesheetSet } from '../spritesheet-set';
+import type { SpritesheetInit, SpritesheetObject } from '../../types/index.js';
+import { SpritesheetSet } from '../spritesheet-set.js';
 
 const decorationsSpritesheetMap = {
   'white-flower-1': {
@@ -138,7 +138,7 @@ const decorationsSpritesheetMap = {
 } as const satisfies SpritesheetObject;
 
 export type DecorationSpreadsheetElementKey =
-  keyof typeof decorationsSpritesheetMap;
+  Extract<keyof typeof decorationsSpritesheetMap, string>;
 
 const decorationsSpritesheetSet: SpritesheetInit<DecorationSpreadsheetElementKey> =
   {

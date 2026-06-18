@@ -1,4 +1,4 @@
-import type { AppError } from './app-error';
+import type { AppError } from './app-error.js';
 
 export type DataObject = string | object;
 

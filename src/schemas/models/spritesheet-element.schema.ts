@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { CoordinatesSchema, SizeMeasuresSchema } from './common.schemas';
+import { CoordinatesSchema, SizeMeasuresSchema } from './common.schemas.js';
 
 export const SpritesheetElementSchema = z
   .object({

@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import { GridDrawerElementWithIdSchema } from '../models/grid-drawer-element.schema';
-import { SpritesheetSetDtoSchema } from '../models/spritesheet-set-dto.schema';
-import { AnimatedSpriteDtoSchema } from '../models/animated-sprite-dto.schema';
-import type {FromZod} from "../../types/common.types";
+import { GridDrawerElementWithIdSchema } from '../models/grid-drawer-element.schema.js';
+import { SpritesheetSetDtoSchema } from '../models/spritesheet-set-dto.schema.js';
+import { AnimatedSpriteDtoSchema } from '../models/animated-sprite-dto.schema.js';
+import type {FromZod} from "../../types/common.types.js";
 
 export const GenerateRootResponseSchema = z.object({
   staticData: z.object({

@@ -1,5 +1,5 @@
-import type { SpritesheetInit, SpritesheetObject } from '../../types';
-import { SpritesheetSet } from '../spritesheet-set';
+import type { SpritesheetInit, SpritesheetObject } from '../../types/index.js';
+import { SpritesheetSet } from '../spritesheet-set.js';
 
 const stonesSpritesheetMap = {
   'stone-1': {
@@ -18,7 +18,7 @@ const stonesSpritesheetMap = {
   },
 } as const satisfies SpritesheetObject;
 
-export type StoneSpritesheetElementKey = keyof typeof stonesSpritesheetMap;
+export type StoneSpritesheetElementKey = Extract<keyof typeof stonesSpritesheetMap, string>;
 
 const stonesSpritesheetSet: SpritesheetInit<StoneSpritesheetElementKey> = {
   spritesheetKey: 'stones-set',

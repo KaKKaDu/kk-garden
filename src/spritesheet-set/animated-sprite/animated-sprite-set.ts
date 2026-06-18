@@ -3,8 +3,8 @@ import type {
   WithId,
   AnimatedSpriteData,
   AnimatedSpriteSetInit,
-} from '../../types';
-import { type DensityPick, densityPick } from '../density-pick';
+} from '../../types/index.js';
+import { type DensityPick, densityPick } from '../density-pick.js';
 
 export class AnimatedSpriteSet<Sprite extends string> {
   private map: Map<Sprite, AnimatedSpriteData> = new Map<

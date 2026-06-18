@@ -2,7 +2,7 @@ import {
   type CellSchema,
   type CoordinatesSchema,
   SizeMeasuresSchema,
-} from '../schemas';
+} from '../schemas/index.js';
 import { z } from 'zod';
 
 export type Nullable<T> = T | null | undefined;
