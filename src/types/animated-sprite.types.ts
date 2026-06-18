@@ -5,7 +5,7 @@ import type {
   FromZod,
   WithDensity,
 } from './common.types.js';
-import { AnimatedSpriteDtoSchema } from '../schemas/index.js';
+import {AnimatedSpriteDtoSchema, SpriteDataDtoSchema} from '../schemas/index.js';
 
 export type AnimatedSpriteData<Tile extends string = string> = WithDensity<{
   sprite: AnimatedSprite<Tile>;
@@ -30,3 +30,4 @@ export type SpriteData = {
 };
 
 export type AnimatedSpriteDto = FromZod<typeof AnimatedSpriteDtoSchema>;
+export type SpriteDataDto = FromZod<typeof SpriteDataDtoSchema>;

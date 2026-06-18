@@ -4,6 +4,7 @@ export type {
   AnimatedSpriteSetInit,
   AnimatedSpriteSetObject,
   AnimatedSpriteDto,
+  SpriteDataDto,
 } from './animated-sprite.types.js';
 export type {
   Nullable,
