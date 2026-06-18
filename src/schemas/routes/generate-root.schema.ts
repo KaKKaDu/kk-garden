@@ -1,8 +1,9 @@
 import { z } from 'zod';
 import { GridDrawerElementWithIdSchema } from '../models/grid-drawer-element.schema.js';
 import { SpritesheetSetDtoSchema } from '../models/spritesheet-set-dto.schema.js';
-import { AnimatedSpriteDtoSchema } from '../models/animated-sprite-dto.schema.js';
 import type {FromZod} from "../../types/common.types.js";
+import {GardenGridConstantsDtoSchema} from "../models/garden-grid-constants-dto.schema.js";
+import {SpriteDataDtoSchema} from "../models/sprite-data-dto.schema.js";
 
 export const GenerateRootResponseSchema = z.object({
   staticData: z.object({
@@ -11,9 +12,10 @@ export const GenerateRootResponseSchema = z.object({
   }),
   animatedData: z.object({
     spritesheetSets: z.record(z.string(), SpritesheetSetDtoSchema),
-    trees: z.array(AnimatedSpriteDtoSchema),
-    bushes: z.array(AnimatedSpriteDtoSchema),
+    trees: z.array(SpriteDataDtoSchema),
+    bushes: z.array(SpriteDataDtoSchema),
   }),
+  constants: GardenGridConstantsDtoSchema,
 });
 
 export const GenerateRootQueryStringSchema =  z.object({

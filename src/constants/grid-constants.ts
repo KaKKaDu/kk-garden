@@ -1,3 +1,5 @@
+import type {GridConstantsDto} from "../types/constants.types.js";
+
 export class GridConstants {
   private readonly size: number;
   public readonly columns: number;
@@ -20,4 +22,16 @@ export class GridConstants {
   get canvasHeight(): number {
     return this.size * this.rows;
   }
+
+  toDto(): GridConstantsDto {
+    return {
+      size: this.size,
+      columns: this.columns,
+      rows: this.rows,
+    };
+  };
+
+  static fromDto(dto: GridConstantsDto): GridConstants {
+    return new GridConstants(dto.size, dto.columns, dto.rows);
+  };
 }

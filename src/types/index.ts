@@ -3,6 +3,7 @@ export type {
   SpriteData,
   AnimatedSpriteSetInit,
   AnimatedSpriteSetObject,
+  AnimatedSpriteDto,
 } from './animated-sprite.types.js';
 export type {
   Nullable,
@@ -30,6 +31,8 @@ export type {
   SpritesheetInit,
   SpritesheetObject,
   SpritesheetSetDto,
+  SpritesheetSetsObject,
 } from './spritesheet-element.types.js';
 export { isSpritesheetSetKey } from './spritesheet-element.types.js';
 export { type ErrorResponse } from './route-responses.types.js';
+export type { GridConstantsDto, GardenGridConstantsDto } from './constants.types.js';
