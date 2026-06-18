@@ -256,7 +256,10 @@ const tilesSpreadsheetMap = {
   },
 } as const;
 
-export type TileSpritesheetElementKey = Extract<keyof typeof tilesSpreadsheetMap, string>;
+export type TileSpritesheetElementKey = Extract<
+  keyof typeof tilesSpreadsheetMap,
+  string
+>;
 
 export type TilePathSpritesheetElementKey = Extract<
   keyof typeof tilesSpreadsheetMap,

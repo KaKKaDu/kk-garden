@@ -35,4 +35,7 @@ export type {
 } from './spritesheet-element.types.js';
 export { isSpritesheetSetKey } from './spritesheet-element.types.js';
 export { type ErrorResponse } from './route-responses.types.js';
-export type { GridConstantsDto, GardenGridConstantsDto } from './constants.types.js';
+export type {
+  GridConstantsDto,
+  GardenGridConstantsDto,
+} from './constants.types.js';

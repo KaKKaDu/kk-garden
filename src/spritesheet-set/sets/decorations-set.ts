@@ -137,8 +137,10 @@ const decorationsSpritesheetMap = {
   },
 } as const satisfies SpritesheetObject;
 
-export type DecorationSpreadsheetElementKey =
-  Extract<keyof typeof decorationsSpritesheetMap, string>;
+export type DecorationSpreadsheetElementKey = Extract<
+  keyof typeof decorationsSpritesheetMap,
+  string
+>;
 
 const decorationsSpritesheetSet: SpritesheetInit<DecorationSpreadsheetElementKey> =
   {

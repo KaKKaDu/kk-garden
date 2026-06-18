@@ -7,7 +7,8 @@ import { z } from 'zod';
 
 export type Nullable<T> = T | null | undefined;
 
-export type FromZod<ZodObject extends z.ZodObject | z.ZodRecord> = z.infer<ZodObject>;
+export type FromZod<ZodObject extends z.ZodObject | z.ZodRecord | z.ZodArray> =
+  z.infer<ZodObject>;
 
 export type Coordinates = FromZod<typeof CoordinatesSchema>;
 

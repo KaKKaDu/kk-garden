@@ -6,8 +6,8 @@
   "type": "module",
   "repository": "https://github.com/KaKKaDu/kk-garden",
   "scripts": {
-    "check": "tsc --noEmit",
-    "build": "tsc -p tsconfig.json && npm run copy-assets",
+    "check": "tsc --noEmit -p tsconfig.build.json",
+    "build": "tsx scripts/build.ts",
     "copy-assets": "cpy 'src/assets/spritesheets/**/*' dist/assets/spritesheets && cpy 'src/globals.d.ts' dist/",
     "format": "prettier --write ."
   },
@@ -44,8 +44,12 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/node": "^25.9.3",
+    "chalk": "^5.6.2",
     "cpy-cli": "^7.0.0",
+    "ora": "^9.4.0",
     "prettier": "^3.8.3",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }

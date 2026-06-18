@@ -18,7 +18,10 @@ const stonesSpritesheetMap = {
   },
 } as const satisfies SpritesheetObject;
 
-export type StoneSpritesheetElementKey = Extract<keyof typeof stonesSpritesheetMap, string>;
+export type StoneSpritesheetElementKey = Extract<
+  keyof typeof stonesSpritesheetMap,
+  string
+>;
 
 const stonesSpritesheetSet: SpritesheetInit<StoneSpritesheetElementKey> = {
   spritesheetKey: 'stones-set',

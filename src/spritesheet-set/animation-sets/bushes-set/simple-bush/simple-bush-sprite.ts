@@ -19,7 +19,10 @@ const simpleBushSpritesheetMap = {
   },
 } as const satisfies SpritesheetObject;
 
-type SimpleBushSpritesheetKey = Extract<keyof typeof simpleBushSpritesheetMap, string>;
+type SimpleBushSpritesheetKey = Extract<
+  keyof typeof simpleBushSpritesheetMap,
+  string
+>;
 
 const SimpleBushSpritesheetSet = new SpritesheetSet({
   spritesheetKey: 'simple-bush-sprite-set',

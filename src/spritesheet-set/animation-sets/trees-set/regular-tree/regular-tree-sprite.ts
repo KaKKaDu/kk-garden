@@ -19,7 +19,10 @@ const regularTreeSpritesheetMap = {
   },
 } as const satisfies SpritesheetObject;
 
-type RegularTreeSpritesheetKey = Extract<keyof typeof regularTreeSpritesheetMap, string>;
+type RegularTreeSpritesheetKey = Extract<
+  keyof typeof regularTreeSpritesheetMap,
+  string
+>;
 
 const RegularTreeSpritesheetSet = new SpritesheetSet({
   spritesheetKey: 'regular-tree-sprite-set',

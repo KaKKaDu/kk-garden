@@ -1,4 +1,8 @@
-import { isSpritesheetSetKey, type Nullable, type WithId } from '../types/index.js';
+import {
+  isSpritesheetSetKey,
+  type Nullable,
+  type WithId,
+} from '../types/index.js';
 import type {
   SpritesheetElement,
   SpritesheetInit,

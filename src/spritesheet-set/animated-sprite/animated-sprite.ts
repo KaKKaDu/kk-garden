@@ -1,7 +1,10 @@
 import { SpritesheetSet } from '../spritesheet-set.js';
-import type {AnimatedSpriteDto} from "../../types/animated-sprite.types.js";
-import type {SpritesheetSetDto, SpritesheetSetsObject} from "../../types/spritesheet-element.types.js";
-import type {Nullable} from "../../types/index.js";
+import type { AnimatedSpriteDto } from '../../types/animated-sprite.types.js';
+import type {
+  SpritesheetSetDto,
+  SpritesheetSetsObject,
+} from '../../types/spritesheet-element.types.js';
+import type { Nullable } from '../../types/index.js';
 
 export class AnimatedSprite<Tile extends string> {
   public readonly key: string;
@@ -29,17 +32,21 @@ export class AnimatedSprite<Tile extends string> {
       framesReference: framesReference,
       animation: this.animation,
     };
-  };
+  }
 
-  static fromDto(dto: AnimatedSpriteDto, sets: SpritesheetSetsObject): Nullable<AnimatedSprite<string>> {
+  static fromDto(
+    dto: AnimatedSpriteDto,
+    sets: SpritesheetSetsObject
+  ): Nullable<AnimatedSprite<string>> {
     const setDto: Nullable<SpritesheetSetDto> = sets[dto.key] || null;
-    if(!setDto) {
+    if (!setDto) {
       return null;
     }
-    const set: Nullable<SpritesheetSet<string>> = SpritesheetSet.fromDto(setDto);
-    if(!set) {
+    const set: Nullable<SpritesheetSet<string>> =
+      SpritesheetSet.fromDto(setDto);
+    if (!set) {
       return null;
     }
     return new AnimatedSprite<string>(dto.key, set, dto.fps, dto.animation);
-  };
+  }
 }

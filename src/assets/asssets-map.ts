@@ -19,8 +19,7 @@ export type SpritesheetAssetKey = Extract<
 
 export const getSpritesheetAsset = (key: SpritesheetAssetKey): string => {
   return new URL(AssetsMap[key], import.meta.url).href;
-}
-
+};
 
 export const isSpritesheetAssetKey = (
   key: string

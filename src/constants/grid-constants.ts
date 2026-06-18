@@ -1,4 +1,4 @@
-import type {GridConstantsDto} from "../types/constants.types.js";
+import type { GridConstantsDto } from '../types/constants.types.js';
 
 export class GridConstants {
   private readonly size: number;
@@ -29,9 +29,9 @@ export class GridConstants {
       columns: this.columns,
       rows: this.rows,
     };
-  };
+  }
 
   static fromDto(dto: GridConstantsDto): GridConstants {
     return new GridConstants(dto.size, dto.columns, dto.rows);
-  };
+  }
 }
