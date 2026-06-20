@@ -38,7 +38,8 @@ export class AnimatedSprite<Tile extends string> {
     dto: AnimatedSpriteDto,
     sets: SpritesheetSetsObject
   ): Nullable<AnimatedSprite<string>> {
-    const setDto: Nullable<SpritesheetSetDto> = sets[dto.framesReference] || null;
+    const setDto: Nullable<SpritesheetSetDto> =
+      sets[dto.framesReference] || null;
     if (!setDto) {
       return null;
     }
