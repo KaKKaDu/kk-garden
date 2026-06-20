@@ -1,0 +1,108 @@
+import { execSync } from 'node:child_process';
+import chalk from 'chalk';
+import ora from 'ora';
+
+function run(command: string, options: { stdio?: 'inherit' | 'pipe' } = {}) {
+  const stdio = options.stdio ?? 'pipe';
+
+  const result = execSync(command, {
+    encoding: 'utf8',
+    stdio,
+  });
+
+  return typeof result === 'string' ? result.trim() : '';
+}
+
+async function main() {
+  console.log(chalk.bold.cyan('\nPackage Release\n'));
+
+  try {
+    run('npm run build', { stdio: 'inherit' });
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+
+  const authSpinner = ora('Checking npm authentication...').start();
+
+  try {
+    const username = run('npm whoami');
+
+    authSpinner.succeed(`Logged in as ${chalk.green(username)}`);
+  } catch (error) {
+    authSpinner.warn('Not logged in');
+    console.error(error);
+
+    console.log(chalk.yellow('\nYou must authenticate before publishing.\n'));
+
+    run('npm login', { stdio: 'inherit' });
+
+    authSpinner.succeed('Authentication successful');
+  }
+
+  const syncSpinner = ora('Syncing existing changes...').start();
+
+  try {
+    run('git add .', { stdio: 'inherit' });
+
+    const hasChanges = run('git status --porcelain');
+
+    if (hasChanges) {
+      run('git commit -m "pre-release sync"', { stdio: 'inherit' });
+      run('git push', { stdio: 'inherit' });
+    }
+
+    syncSpinner.succeed('Repository synchronized');
+  } catch (error) {
+    syncSpinner.fail('Failed to synchronize repository');
+    console.error(error);
+    process.exit(1);
+  }
+
+  const versionSpinner = ora('Bumping patch version...').start();
+
+  let version: string;
+
+  try {
+    version = run('npm version patch -m "version patch v%s"');
+
+    versionSpinner.succeed(`Version bumped to ${chalk.green(version)}`);
+  } catch (error) {
+    versionSpinner.fail('Failed to bump version');
+    console.error(error);
+    process.exit(1);
+  }
+
+  const pushSpinner = ora('Pushing commit and tag...').start();
+
+  try {
+    run('git push', { stdio: 'inherit' });
+    run('git push --tags', { stdio: 'inherit' });
+
+    pushSpinner.succeed('Repository updated');
+  } catch (error) {
+    pushSpinner.fail('Failed to push changes');
+    console.error(error);
+    process.exit(1);
+  }
+
+  const publishSpinner = ora('Publishing package...').start();
+
+  try {
+    run('npm publish', { stdio: 'inherit' });
+
+    publishSpinner.succeed(`${chalk.green(version)} published successfully`);
+  } catch (error) {
+    publishSpinner.fail('Publish failed');
+    console.error(error);
+    process.exit(1);
+  }
+
+  console.log(chalk.bold.green(`\n🚀 Release complete (${version})\n`));
+}
+
+main().catch((error) => {
+  console.error(chalk.red('\nUnexpected error:\n'));
+  console.error(error);
+  process.exit(1);
+});

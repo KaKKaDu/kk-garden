@@ -8,7 +8,7 @@
   "scripts": {
     "check": "tsc --noEmit -p tsconfig.build.json",
     "build": "tsx scripts/build.ts",
-    "push": "npm run build && npm login && npm version patch && npm publish",
+    "release": "tsx scripts/release.ts",
     "copy-assets": "cpy 'src/assets/spritesheets/**/*' dist/assets/spritesheets && cpy 'src/globals.d.ts' dist/",
     "format": "prettier --write ."
   },
