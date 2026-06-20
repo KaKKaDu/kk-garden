@@ -49,7 +49,7 @@ async function main() {
 
     if (hasChanges) {
       run('git commit -m "pre-release sync"', { stdio: 'inherit' });
-      run('git push', { stdio: 'inherit' });
+      run('git push origin main', { stdio: 'inherit' });
     }
 
     syncSpinner.succeed('Repository synchronized');
@@ -76,8 +76,8 @@ async function main() {
   const pushSpinner = ora('Pushing commit and tag...').start();
 
   try {
-    run('git push', { stdio: 'inherit' });
-    run('git push --tags', { stdio: 'inherit' });
+    run('git push origin main', { stdio: 'inherit' });
+    run('git push origin main --tags', { stdio: 'inherit' });
 
     pushSpinner.succeed('Repository updated');
   } catch (error) {
