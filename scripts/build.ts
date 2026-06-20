@@ -19,7 +19,7 @@ function run(command: string, label: string) {
   }
 }
 
-console.log(chalk.blue.bold('Building the @kk-garden/shared package \n'));
+console.log(chalk.blue.bold('Building the package \n'));
 
 const formatOk: boolean = run('npx prettier --write .', 'Formatting');
 if (!formatOk) process.exit(1);

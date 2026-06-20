@@ -40,10 +40,11 @@ async function main() {
     authSpinner.succeed('Authentication successful');
   }
 
-  const syncSpinner = ora('Syncing existing changes...').start();
+  const syncSpinner = ora('Syncing existing changes...\n').start();
 
   try {
     run('git add .', { stdio: 'inherit' });
+    console.log('\n');
 
     const hasChanges = run('git status --porcelain');
 
@@ -73,7 +74,7 @@ async function main() {
     process.exit(1);
   }
 
-  const pushSpinner = ora('Pushing commit and tag...').start();
+  const pushSpinner = ora('Pushing commit and tag...\n').start();
 
   try {
     run('git push origin main', { stdio: 'inherit' });
@@ -86,7 +87,7 @@ async function main() {
     process.exit(1);
   }
 
-  const publishSpinner = ora('Publishing package...').start();
+  const publishSpinner = ora('Publishing package...\n').start();
 
   try {
     run('npm publish', { stdio: 'inherit' });
@@ -98,7 +99,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(chalk.bold.green(`\n🚀 Release complete (${version})\n`));
+  console.log(chalk.bold.green(`\nRelease complete (${version})\n`));
 }
 
 main().catch((error) => {
