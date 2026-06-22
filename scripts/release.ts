@@ -89,7 +89,7 @@ async function main() {
   const publishSpinner = ora('Publishing package...\n').start();
 
   try {
-    run('npm publish');
+    run('npm publish', { stdio: 'inherit' });
 
     publishSpinner.succeed(`${chalk.green(version)} published successfully`);
   } catch (error) {
