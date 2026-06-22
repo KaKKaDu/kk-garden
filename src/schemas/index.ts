@@ -17,6 +17,7 @@ export { SpritesheetSetDtoSchema } from './models/spritesheet-set-dto.schema.js'
 export { SpritesheetSetsObjectSchema } from './models/spritesheet-sets-object.schema.js';
 export { GridConstantsDtoSchema } from './models/grid-constants-dto.schema.js';
 export { GardenGridConstantsDtoSchema } from './models/garden-grid-constants-dto.schema.js';
+export { GardenDrawDataDtoSchema } from './models/garden-draw-data-dto.schema.js';
 export {
   GenerateRootResponseSchema,
   GenerateRootQueryStringSchema,

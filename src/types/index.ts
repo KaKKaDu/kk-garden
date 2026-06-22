@@ -23,6 +23,7 @@ export type {
   GardenGridConstants,
   StaticDrawReport,
   GridDrawerElement,
+  GardenDrawDataDto,
 } from './grid-drawer.types.js';
 export type { PathMap, PathMapElement, GridPathElement } from './path.types.js';
 export type {
@@ -40,3 +41,7 @@ export type {
   GridConstantsDto,
   GardenGridConstantsDto,
 } from './constants.types.js';
+export type {
+  TransformerType,
+  TransformerAdditionalProps,
+} from './transformer.types.js';

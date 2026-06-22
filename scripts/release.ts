@@ -31,7 +31,6 @@ async function main() {
     authSpinner.succeed(`Logged in as ${chalk.green(username)}`);
   } catch (error) {
     authSpinner.warn('Not logged in');
-    console.error(error);
 
     console.log(chalk.yellow('\nYou must authenticate before publishing.\n'));
 

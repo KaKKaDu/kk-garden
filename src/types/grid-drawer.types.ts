@@ -2,6 +2,7 @@ import type { FromZod, WithId } from './common.types.js';
 import type { SpriteData } from './animated-sprite.types.js';
 import type { GridConstants } from '../constants/index.js';
 import type { GridDrawerElementSchema } from '../schemas/index.js';
+import type { GardenDrawDataDtoSchema } from '../schemas/index.js';
 
 export type GridDrawerElement = FromZod<typeof GridDrawerElementSchema>;
 
@@ -16,6 +17,8 @@ export type GardenDrawData = {
   bushes: SpriteData[];
   stones: WithId<GridDrawerElement>[];
 };
+
+export type GardenDrawDataDto = FromZod<typeof GardenDrawDataDtoSchema>;
 
 export type GardenGridConstants = {
   gridConstants: GridConstants;
