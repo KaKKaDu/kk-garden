@@ -26,3 +26,4 @@ export type {
   GenerateRootResponse,
   GenerateRootQueryString,
 } from './routes/generate-root.schema.js';
+export { VisualisationDtoSchema } from './models/visualisation-dto.schema.js';

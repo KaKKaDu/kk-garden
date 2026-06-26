@@ -45,3 +45,4 @@ export type {
   TransformerType,
   TransformerAdditionalProps,
 } from './transformer.types.js';
+export type { VisualisationDto } from './visualisation.types.js';
