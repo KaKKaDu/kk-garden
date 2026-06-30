@@ -1,3 +1,4 @@
+// model exports
 export { ErrorSchema } from './errors/error.schema.js';
 export { AnimatedSpriteDtoSchema } from './models/animated-sprite-dto.schema.js';
 export {
@@ -18,6 +19,12 @@ export { SpritesheetSetsObjectSchema } from './models/spritesheet-sets-object.sc
 export { GridConstantsDtoSchema } from './models/grid-constants-dto.schema.js';
 export { GardenGridConstantsDtoSchema } from './models/garden-grid-constants-dto.schema.js';
 export { GardenDrawDataDtoSchema } from './models/garden-draw-data-dto.schema.js';
+export { VisualisationDtoSchema } from './models/visualisation-dto.schema.js';
+export { UserSchema } from './models/user.schema.js';
+export { UserRoleSchema } from './models/user-role.schema.js';
+export { UserStatusSchema } from './models/user-status.schema.js';
+
+// route exports
 export {
   GenerateRootResponseSchema,
   GenerateRootQueryStringSchema,
@@ -26,4 +33,3 @@ export type {
   GenerateRootResponse,
   GenerateRootQueryString,
 } from './routes/generate-root.schema.js';
-export { VisualisationDtoSchema } from './models/visualisation-dto.schema.js';
