@@ -42,7 +42,7 @@ export type {
   GardenGridConstantsDto,
 } from './constants.types.js';
 export { userRoles, userStatuses } from './user.types.js';
-export type { User } from './user-dto.types.js';
+export type { User, UserRole, UserStatus } from './user.types.js';
 export type {
   TransformerType,
   TransformerAdditionalProps,
