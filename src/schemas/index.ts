@@ -6,6 +6,7 @@ export {
   SizeMeasuresSchema,
   CellSchema,
   addId,
+  addMongoId,
 } from './models/common.schemas.js';
 export {
   GridDrawerElementWithIdSchema,
@@ -23,6 +24,7 @@ export { VisualisationDtoSchema } from './models/visualisation-dto.schema.js';
 export { UserSchema } from './models/user.schema.js';
 export { UserRoleSchema } from './models/user-role.schema.js';
 export { UserStatusSchema } from './models/user-status.schema.js';
+export { SignatureSchema } from './models/signature.schema.js';
 
 // route exports
 export {

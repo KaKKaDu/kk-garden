@@ -48,3 +48,4 @@ export type {
   TransformerAdditionalProps,
 } from './transformer.types.js';
 export type { VisualisationDto } from './visualisation.types.js';
+export type { Signature } from './signature.types.js';
