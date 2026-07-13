@@ -1,4 +1,11 @@
 // model exports
+export {
+  GridDrawerElementIdSchema,
+  SignatureIdSchema,
+  VisualisationIdSchema,
+  UserIdSchema,
+  OwnershipIdSchema,
+} from './models/id.schemas.js';
 export { ErrorSchema } from './errors/error.schema.js';
 export { AnimatedSpriteDtoSchema } from './models/animated-sprite-dto.schema.js';
 export {
@@ -25,6 +32,7 @@ export { UserSchema } from './models/user.schema.js';
 export { UserRoleSchema } from './models/user-role.schema.js';
 export { UserStatusSchema } from './models/user-status.schema.js';
 export { SignatureSchema } from './models/signature.schema.js';
+export { OwnershipSchema } from './models/ownership.schema.js';
 
 // route exports
 export {

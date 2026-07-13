@@ -1,6 +1,7 @@
 import { execSync } from 'node:child_process';
 import chalk from 'chalk';
 import ora from 'ora';
+import { createInterface } from 'node:readline';
 
 function run(command: string, options: { stdio?: 'inherit' | 'pipe' } = {}) {
   const stdio = options.stdio ?? 'pipe';
@@ -11,6 +12,25 @@ function run(command: string, options: { stdio?: 'inherit' | 'pipe' } = {}) {
   });
 
   return typeof result === 'string' ? result.trim() : '';
+}
+
+function promptForCustomMessage(): Promise<string> {
+  return new Promise((resolve) => {
+    const readline = createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    readline.question(
+      chalk.cyan(
+        '\nEnter custom commit message (optional, press Enter to skip): '
+      ),
+      (answer) => {
+        readline.close();
+        resolve(answer);
+      }
+    );
+  });
 }
 
 async function main() {
@@ -59,12 +79,18 @@ async function main() {
     process.exit(1);
   }
 
+  const customMessage = await promptForCustomMessage();
+
   const versionSpinner = ora('Bumping patch version...').start();
 
   let version: string;
 
   try {
-    version = run('npm version patch -m "version patch v%s"');
+    const commitMessage = customMessage
+      ? `v%s: ${customMessage}`
+      : 'version patch v%s';
+
+    version = run(`npm version patch -m "${commitMessage}"`);
 
     versionSpinner.succeed(`Version bumped to ${chalk.green(version)}`);
   } catch (error) {

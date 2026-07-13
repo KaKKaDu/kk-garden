@@ -1,4 +1,11 @@
 export type {
+  GridDrawerElementId,
+  SignatureId,
+  VisualisationId,
+  UserId,
+  OwnershipId,
+} from './id.types.js';
+export type {
   AnimatedSpriteData,
   SpriteData,
   AnimatedSpriteSetInit,
@@ -49,3 +56,4 @@ export type {
 } from './transformer.types.js';
 export type { VisualisationDto } from './visualisation.types.js';
 export type { Signature } from './signature.types.js';
+export type { Ownership } from './ownership.types.js';

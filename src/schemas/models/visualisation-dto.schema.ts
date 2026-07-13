@@ -4,7 +4,6 @@ import { addMongoId } from './common.schemas.js';
 
 export const VisualisationDtoSchema = z
   .object({
-    _id: z.string(),
     data: GardenDrawDataDtoSchema,
     createdAt: z.string().or(z.date()),
   })
