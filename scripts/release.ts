@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process';
 import chalk from 'chalk';
 import ora from 'ora';
 import { createInterface } from 'node:readline';
+import { readFileSync } from 'node:fs';
 
 function run(command: string, options: { stdio?: 'inherit' | 'pipe' } = {}) {
   const stdio = options.stdio ?? 'pipe';
@@ -12,6 +13,23 @@ function run(command: string, options: { stdio?: 'inherit' | 'pipe' } = {}) {
   });
 
   return typeof result === 'string' ? result.trim() : '';
+}
+
+function getNextVersion(): string {
+  const packageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
+  let [major, minor, patch] = packageJson.version.split('.').map(Number);
+
+  patch += 1;
+  if (patch >= 10) {
+    patch = 0;
+    minor += 1;
+    if (minor >= 10) {
+      minor = 0;
+      major += 1;
+    }
+  }
+
+  return `${major}.${minor}.${patch}`;
 }
 
 function promptForCustomMessage(): Promise<string> {
@@ -59,6 +77,9 @@ async function main() {
     authSpinner.succeed('Authentication successful');
   }
 
+  const customMessage = await promptForCustomMessage();
+  const nextVersion = getNextVersion();
+
   const syncSpinner = ora('Syncing existing changes...\n').start();
 
   try {
@@ -68,7 +89,11 @@ async function main() {
     const hasChanges = run('git status --porcelain');
 
     if (hasChanges) {
-      run('git commit -m "pre-release sync"', { stdio: 'inherit' });
+      const syncCommitMessage = customMessage
+        ? `chore(v${nextVersion}): ${customMessage}`
+        : `chore(v${nextVersion}): pre-release sync`;
+
+      run(`git commit -m "${syncCommitMessage}"`, { stdio: 'inherit' });
       run('git push origin main', { stdio: 'inherit' });
     }
 
@@ -79,18 +104,16 @@ async function main() {
     process.exit(1);
   }
 
-  const customMessage = await promptForCustomMessage();
-
   const versionSpinner = ora('Bumping patch version...').start();
 
   let version: string;
 
   try {
     const commitMessage = customMessage
-      ? `v%s: ${customMessage}`
-      : 'version patch v%s';
+      ? `release(v${nextVersion}): ${customMessage}`
+      : `release(v${nextVersion}): version patch`;
 
-    version = run(`npm version patch -m "${commitMessage}"`);
+    version = run(`npm version ${nextVersion} -m "${commitMessage}"`);
 
     versionSpinner.succeed(`Version bumped to ${chalk.green(version)}`);
   } catch (error) {
