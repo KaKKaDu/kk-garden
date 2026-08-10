@@ -6,10 +6,12 @@ import { GardenDrawDataDtoSchema } from '../models/garden-draw-data-dto.schema.j
 export const GenerateRootResponseSchema = z.object({
   constants: GardenGridConstantsDtoSchema,
   generations: z.array(GardenDrawDataDtoSchema),
+  pendingId: z.string().optional(),
 });
 
 export const GenerateRootQueryStringSchema = z.object({
   count: z.coerce.number().optional().default(3),
+  pendingId: z.string().optional(),
 });
 
 export type GenerateRootResponse = FromZod<typeof GenerateRootResponseSchema>;

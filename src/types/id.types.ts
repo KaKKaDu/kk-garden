@@ -4,14 +4,19 @@ import type {
   SignatureIdSchema,
   UserIdSchema,
   VisualisationIdSchema,
+  OwnershipIdSchema,
+  VisualisationPendingIdSchema,
 } from '../schemas/index.js';
-import type { OwnershipIdSchema } from '../schemas/models/id.schemas.js';
 
 export type GridDrawerElementId = z.infer<typeof GridDrawerElementIdSchema>;
 
 export type SignatureId = z.infer<typeof SignatureIdSchema>;
 
 export type VisualisationId = z.infer<typeof VisualisationIdSchema>;
+
+export type VisualisationPendingId = z.infer<
+  typeof VisualisationPendingIdSchema
+>;
 
 export type UserId = z.infer<typeof UserIdSchema>;
 

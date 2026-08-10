@@ -3,6 +3,7 @@ export {
   GridDrawerElementIdSchema,
   SignatureIdSchema,
   VisualisationIdSchema,
+  VisualisationPendingIdSchema,
   UserIdSchema,
   OwnershipIdSchema,
 } from './models/id.schemas.js';
@@ -28,6 +29,7 @@ export { GridConstantsDtoSchema } from './models/grid-constants-dto.schema.js';
 export { GardenGridConstantsDtoSchema } from './models/garden-grid-constants-dto.schema.js';
 export { GardenDrawDataDtoSchema } from './models/garden-draw-data-dto.schema.js';
 export { VisualisationDtoSchema } from './models/visualisation-dto.schema.js';
+export { VisualisationPendingDtoSchema } from './models/visualisation-pending-dto.schema.js';
 export { UserSchema } from './models/user.schema.js';
 export { UserRoleSchema } from './models/user-role.schema.js';
 export { UserStatusSchema } from './models/user-status.schema.js';
