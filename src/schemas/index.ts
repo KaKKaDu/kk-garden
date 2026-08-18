@@ -45,3 +45,12 @@ export type {
   GenerateRootResponse,
   GenerateRootQueryString,
 } from './routes/generate-root.schema.js';
+
+export {
+  AssignRootResponseSchema,
+  AssignRootRequestSchema,
+} from './routes/assign-root.schema.js';
+export type {
+  AssignRootResponse,
+  AssignRootRequest,
+} from './routes/assign-root.schema.js';
