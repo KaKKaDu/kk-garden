@@ -6,6 +6,7 @@ export const OwnershipVerificationResultSchema = z.object({
   signatureExists: OwnershipVerificationPointSchema,
   visualisationExists: OwnershipVerificationPointSchema,
   userExists: OwnershipVerificationPointSchema,
+  ownershipProofVerified: OwnershipVerificationPointSchema,
   signatureProofVerified: OwnershipVerificationPointSchema,
   visualisationVerified: OwnershipVerificationPointSchema,
 });
