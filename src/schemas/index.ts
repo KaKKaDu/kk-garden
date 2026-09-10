@@ -54,3 +54,12 @@ export type {
   AssignRootResponse,
   AssignRootRequest,
 } from './routes/assign-root.schema.js';
+
+export {
+  AssignCancelResponseSchema,
+  AssignCancelRequestSchema,
+} from './routes/assign-cancel.schema.js';
+export type {
+  AssignCancelResponse,
+  AssignCancelRequest,
+} from './routes/assign-cancel.schema.js';
