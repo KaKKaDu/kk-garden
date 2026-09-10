@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { VisualisationPendingIdSchema } from '../models/id.schemas.js';
 
 export const AssignCancelRequestSchema = z.object({
-  pendingId: z.string().uuid(),
+  pendingId: VisualisationPendingIdSchema,
 });
 
 export const AssignCancelResponseSchema = z.object({
