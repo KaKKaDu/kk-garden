@@ -37,6 +37,8 @@ export { SignatureSchema } from './models/signature.schema.js';
 export { OwnershipSchema } from './models/ownership.schema.js';
 
 // verification schemas
+export { OwnershipVerificationPointSchema } from './models/ownership-verification-point.schema.js';
+export type { OwnershipVerificationPoint } from './models/ownership-verification-point.schema.js';
 export { OwnershipVerificationResultSchema } from './models/ownership-verification-result.schema.js';
 export type { OwnershipVerificationResult } from './models/ownership-verification-result.schema.js';
 

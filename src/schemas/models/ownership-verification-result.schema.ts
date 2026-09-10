@@ -1,24 +1,13 @@
 import { z } from 'zod';
+import { OwnershipVerificationPointSchema } from './ownership-verification-point.schema.js';
 
 export const OwnershipVerificationResultSchema = z.object({
-  ownershipExists: z.object({
-    success: z.boolean(),
-  }),
-  signatureExists: z.object({
-    success: z.boolean(),
-  }),
-  visualisationExists: z.object({
-    success: z.boolean(),
-  }),
-  userExists: z.object({
-    success: z.boolean(),
-  }),
-  signatureProofVerified: z.object({
-    success: z.boolean(),
-  }),
-  visualisationVerified: z.object({
-    success: z.boolean(),
-  }),
+  ownershipExists: OwnershipVerificationPointSchema,
+  signatureExists: OwnershipVerificationPointSchema,
+  visualisationExists: OwnershipVerificationPointSchema,
+  userExists: OwnershipVerificationPointSchema,
+  signatureProofVerified: OwnershipVerificationPointSchema,
+  visualisationVerified: OwnershipVerificationPointSchema,
 });
 
 export type OwnershipVerificationResult = z.infer<
