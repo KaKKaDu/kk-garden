@@ -36,6 +36,10 @@ export { UserStatusSchema } from './models/user-status.schema.js';
 export { SignatureSchema } from './models/signature.schema.js';
 export { OwnershipSchema } from './models/ownership.schema.js';
 
+// verification schemas
+export { OwnershipVerificationResultSchema } from './models/ownership-verification-result.schema.js';
+export type { OwnershipVerificationResult } from './models/ownership-verification-result.schema.js';
+
 // route exports
 export {
   GenerateRootResponseSchema,
