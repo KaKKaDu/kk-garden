@@ -69,3 +69,12 @@ export type {
   AssignCancelResponse,
   AssignCancelRequest,
 } from './routes/assign-cancel.schema.js';
+
+export {
+  VerifyRootResponseSchema,
+  VerifyRootRequestSchema,
+} from './routes/verify-root.schema.js';
+export type {
+  VerifyRootResponse,
+  VerifyRootRequest,
+} from './routes/verify-root.schema.js';
