@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { ownershipVerificationStatuses } from '../../types/ownership-verification.types.js';
 
 export const OwnershipVerificationPointSchema = z.object({
-  success: z.boolean(),
+  status: z.enum(ownershipVerificationStatuses),
   error: z.string().optional(),
 });
 
