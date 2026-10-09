@@ -13,7 +13,7 @@ export class AppError extends Error {
   error?: Error;
 
   get isServer(): boolean {
-    return !!(this.status && this.status > 500 && this.status < 600);
+    return !!(this.status && this.status >= 500 && this.status < 600);
   }
 
   get isClient(): boolean {

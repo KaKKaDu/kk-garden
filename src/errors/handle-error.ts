@@ -1,29 +1,53 @@
 import type { DataObject, SuccessData } from './success-data.js';
 import { AppError } from './app-error.js';
 
+const getErrorStatus = (error: object): number => {
+  const candidates: unknown[] = [
+    'status' in error ? error.status : undefined,
+    'statusCode' in error ? error.statusCode : undefined,
+    'code' in error ? error.code : undefined,
+  ];
+
+  for (const candidate of candidates) {
+    const status: number =
+      typeof candidate === 'number'
+        ? candidate
+        : typeof candidate === 'string' && candidate.trim() !== ''
+          ? Number(candidate)
+          : NaN;
+    if (Number.isInteger(status) && status >= 400 && status < 600) {
+      return status;
+    }
+  }
+  return 500;
+};
+
 export const handleError = <Data extends DataObject = DataObject>(
   e: unknown
 ): SuccessData<false, Data> => {
-  let statusCode: number = 0;
+  if (e instanceof AppError) {
+    return { success: false, errors: [e] };
+  }
+
+  let statusCode: number = 500;
   let message: string = 'Unknown error';
   if (e instanceof Error) {
-    message = `${e.message}`;
     return {
       success: false,
       errors: [
-        new AppError({ message, status: 0, context: JSON.stringify(e) }),
+        new AppError({
+          message: e.message,
+          status: getErrorStatus(e),
+          error: e,
+        }),
       ],
     };
   }
   if (e && typeof e === 'object') {
-    if ('code' in e) {
-      statusCode = parseInt(e.code as string);
-    } else if ('status' in e) {
-      statusCode = parseInt(e.status as string);
-    } else if ('statusCode' in e) {
-      statusCode = parseInt(e.statusCode as string);
-    }
-    if ('data' in e) {
+    statusCode = getErrorStatus(e);
+    if ('message' in e && typeof e.message === 'string') {
+      message = e.message;
+    } else if ('data' in e) {
       message = JSON.stringify(e.data);
     } else if ('description' in e) {
       message = JSON.stringify(e.description);
