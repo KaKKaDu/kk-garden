@@ -2,10 +2,15 @@ import { z } from 'zod';
 import type { FromZod } from '../../types/common.types.js';
 import { GardenGridConstantsDtoSchema } from '../models/garden-grid-constants-dto.schema.js';
 import { GardenDrawDataDtoSchema } from '../models/garden-draw-data-dto.schema.js';
+import { VisualisationIdSchema } from '../models/id.schemas.js';
 
 export const GenerateRootResponseSchema = z.object({
   constants: GardenGridConstantsDtoSchema,
-  generations: z.array(GardenDrawDataDtoSchema),
+  generations: z.array(
+    GardenDrawDataDtoSchema.extend({
+      visualisationId: VisualisationIdSchema,
+    })
+  ),
   pendingId: z.string().optional(),
 });
 
