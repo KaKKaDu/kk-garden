@@ -1,6 +1,7 @@
-import { z } from 'zod';
+import type { FromZod } from './common.types.js';
 import type {
   GridDrawerElementIdSchema,
+  ProfileAvatarUploadIdSchema,
   SignatureIdSchema,
   UserIdSchema,
   VisualisationIdSchema,
@@ -8,16 +9,18 @@ import type {
   VisualisationPendingIdSchema,
 } from '../schemas/index.js';
 
-export type GridDrawerElementId = z.infer<typeof GridDrawerElementIdSchema>;
+export type GridDrawerElementId = FromZod<typeof GridDrawerElementIdSchema>;
 
-export type SignatureId = z.infer<typeof SignatureIdSchema>;
+export type SignatureId = FromZod<typeof SignatureIdSchema>;
 
-export type VisualisationId = z.infer<typeof VisualisationIdSchema>;
+export type VisualisationId = FromZod<typeof VisualisationIdSchema>;
 
-export type VisualisationPendingId = z.infer<
+export type VisualisationPendingId = FromZod<
   typeof VisualisationPendingIdSchema
 >;
 
-export type UserId = z.infer<typeof UserIdSchema>;
+export type ProfileAvatarUploadId = FromZod<typeof ProfileAvatarUploadIdSchema>;
 
-export type OwnershipId = z.infer<typeof OwnershipIdSchema>;
+export type UserId = FromZod<typeof UserIdSchema>;
+
+export type OwnershipId = FromZod<typeof OwnershipIdSchema>;

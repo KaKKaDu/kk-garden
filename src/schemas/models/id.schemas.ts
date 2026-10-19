@@ -8,6 +8,8 @@ export const VisualisationIdSchema = z.string();
 
 export const VisualisationPendingIdSchema = z.string();
 
+export const ProfileAvatarUploadIdSchema = z.string();
+
 export const UserIdSchema = z.string();
 
 export const OwnershipIdSchema = z.string();
