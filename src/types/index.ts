@@ -4,6 +4,7 @@ export type {
   VisualisationId,
   VisualisationPendingId,
   ProfileAvatarUploadId,
+  AvatarCleanupJobId,
   UserId,
   OwnershipId,
 } from './id.types.js';
@@ -53,6 +54,14 @@ export type {
 export { userRoles, userStatuses } from './user.types.js';
 export type { User, UserRole, UserStatus } from './user.types.js';
 export type { Profile } from './profile.types.js';
+export type {
+  AvatarWorkClaim,
+  AvatarWorkFailure,
+  ProfileAvatarUploadResult,
+  ProfileAvatarUploadSession,
+  AvatarCleanupTarget,
+  AvatarCleanupJob,
+} from './avatar-work.types.js';
 export { ownershipVerificationStatuses } from './ownership-verification.types.js';
 export type { OwnershipVerificationStatus } from './ownership-verification.types.js';
 export type {

@@ -2,6 +2,7 @@ import type { FromZod } from './common.types.js';
 import type {
   GridDrawerElementIdSchema,
   ProfileAvatarUploadIdSchema,
+  AvatarCleanupJobIdSchema,
   SignatureIdSchema,
   UserIdSchema,
   VisualisationIdSchema,
@@ -20,6 +21,8 @@ export type VisualisationPendingId = FromZod<
 >;
 
 export type ProfileAvatarUploadId = FromZod<typeof ProfileAvatarUploadIdSchema>;
+
+export type AvatarCleanupJobId = FromZod<typeof AvatarCleanupJobIdSchema>;
 
 export type UserId = FromZod<typeof UserIdSchema>;
 

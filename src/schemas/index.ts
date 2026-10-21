@@ -7,6 +7,7 @@ export {
   UserIdSchema,
   OwnershipIdSchema,
   ProfileAvatarUploadIdSchema,
+  AvatarCleanupJobIdSchema,
 } from './models/id.schemas.js';
 export { ErrorSchema } from './errors/error.schema.js';
 export { AnimatedSpriteDtoSchema } from './models/animated-sprite-dto.schema.js';
@@ -43,6 +44,21 @@ export {
 } from './models/profile.schema.js';
 export { ProfileAccentProjectionSchema } from './models/profile-accent-projection.schema.js';
 export { ProfileAvatarDeliverySchema } from './models/profile-avatar-delivery.schema.js';
+export {
+  AvatarWorkTimestampSchema,
+  AvatarStagingObjectKeySchema,
+  AvatarFinalObjectKeySchema,
+  AvatarWorkClaimSchema,
+  AvatarWorkFailureSchema,
+} from './models/avatar-work.schema.js';
+export {
+  ProfileAvatarUploadResultSchema,
+  ProfileAvatarUploadSessionSchema,
+} from './models/profile-avatar-upload-session.schema.js';
+export {
+  AvatarCleanupTargetSchema,
+  AvatarCleanupJobSchema,
+} from './models/avatar-cleanup-job.schema.js';
 export { SignatureSchema } from './models/signature.schema.js';
 export { OwnershipSchema } from './models/ownership.schema.js';
 

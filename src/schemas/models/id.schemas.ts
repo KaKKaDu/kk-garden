@@ -10,6 +10,8 @@ export const VisualisationPendingIdSchema = z.string();
 
 export const ProfileAvatarUploadIdSchema = z.string();
 
+export const AvatarCleanupJobIdSchema = z.string().min(1);
+
 export const UserIdSchema = z.string();
 
 export const OwnershipIdSchema = z.string();
