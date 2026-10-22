@@ -5,6 +5,7 @@ import { ProfileAvatarDeliverySchema } from '../../models/profile-avatar-deliver
 import {
   ProfileBioSchema,
   ProfileDisplayNameSchema,
+  ProfileLookupCodeSchema,
 } from '../../models/profile.schema.js';
 
 export const ProfileOwnerResponseSchema = z.discriminatedUnion('configured', [
@@ -13,6 +14,7 @@ export const ProfileOwnerResponseSchema = z.discriminatedUnion('configured', [
       configured: z.literal(false),
       accent: ProfileAccentProjectionSchema,
       avatar: z.null(),
+      lookupCode: ProfileLookupCodeSchema.nullable(),
     })
     .strict(),
   z
@@ -22,6 +24,7 @@ export const ProfileOwnerResponseSchema = z.discriminatedUnion('configured', [
       bio: ProfileBioSchema.optional(),
       accent: ProfileAccentProjectionSchema,
       avatar: ProfileAvatarDeliverySchema.nullable(),
+      lookupCode: ProfileLookupCodeSchema.nullable(),
     })
     .strict(),
 ]);

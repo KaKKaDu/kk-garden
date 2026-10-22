@@ -44,6 +44,12 @@ export const ProfileAccentHexSchema = z
 
 export const ProfileAvatarObjectKeySchema = z.string().min(1);
 
+export const ProfileLookupCodeSchema = z
+  .string()
+  .trim()
+  .toUpperCase()
+  .regex(/^[A-HJKMNP-Z2-9]{16}$/);
+
 export const ProfileSchema = z
   .object({
     _id: UserIdSchema,
@@ -51,5 +57,6 @@ export const ProfileSchema = z
     bio: ProfileBioSchema.optional(),
     accentHex: ProfileAccentHexSchema.optional(),
     avatarObjectKey: ProfileAvatarObjectKeySchema.optional(),
+    lookupCode: ProfileLookupCodeSchema.optional(),
   })
   .strict();

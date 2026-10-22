@@ -41,6 +41,7 @@ export {
   ProfileBioSchema,
   ProfileAccentHexSchema,
   ProfileAvatarObjectKeySchema,
+  ProfileLookupCodeSchema,
 } from './models/profile.schema.js';
 export { ProfileAccentProjectionSchema } from './models/profile-accent-projection.schema.js';
 export { ProfileAvatarDeliverySchema } from './models/profile-avatar-delivery.schema.js';
@@ -72,8 +73,14 @@ export type {
   ProfileUpdateRequest,
   ProfileUpdateResponse,
 } from './routes/profile/profile-update.schema.js';
-export { ProfileLookupCardResponseSchema } from './routes/profile/profile-lookup-card.schema.js';
-export type { ProfileLookupCardResponse } from './routes/profile/profile-lookup-card.schema.js';
+export {
+  ProfileLookupCardRequestSchema,
+  ProfileLookupCardResponseSchema,
+} from './routes/profile/profile-lookup-card.schema.js';
+export type {
+  ProfileLookupCardRequest,
+  ProfileLookupCardResponse,
+} from './routes/profile/profile-lookup-card.schema.js';
 export { GardenProfileResponseSchema } from './routes/profile/profile-garden-view.schema.js';
 export type { GardenProfileResponse } from './routes/profile/profile-garden-view.schema.js';
 export {
