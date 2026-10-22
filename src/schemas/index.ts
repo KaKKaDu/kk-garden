@@ -94,6 +94,14 @@ export type {
 } from './routes/profile/profile-avatar-finalize.schema.js';
 export { ProfileAvatarDeleteResponseSchema } from './routes/profile/profile-avatar-delete.schema.js';
 export type { ProfileAvatarDeleteResponse } from './routes/profile/profile-avatar-delete.schema.js';
+export {
+  DeleteAccountRequestSchema,
+  DeleteAccountResponseSchema,
+} from './routes/account/delete-account.schema.js';
+export type {
+  DeleteAccountRequest,
+  DeleteAccountResponse,
+} from './routes/account/delete-account.schema.js';
 
 // verification schemas
 export { OwnershipVerificationPointSchema } from './models/ownership-verification-point.schema.js';
