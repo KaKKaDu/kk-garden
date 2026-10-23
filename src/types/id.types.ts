@@ -8,6 +8,8 @@ import type {
   VisualisationIdSchema,
   OwnershipIdSchema,
   VisualisationPendingIdSchema,
+  GardenShareRequestIdSchema,
+  GardenShareGrantIdSchema,
 } from '../schemas/index.js';
 
 export type GridDrawerElementId = FromZod<typeof GridDrawerElementIdSchema>;
@@ -27,3 +29,7 @@ export type AvatarCleanupJobId = FromZod<typeof AvatarCleanupJobIdSchema>;
 export type UserId = FromZod<typeof UserIdSchema>;
 
 export type OwnershipId = FromZod<typeof OwnershipIdSchema>;
+
+export type GardenShareRequestId = FromZod<typeof GardenShareRequestIdSchema>;
+
+export type GardenShareGrantId = FromZod<typeof GardenShareGrantIdSchema>;

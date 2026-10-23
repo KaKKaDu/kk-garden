@@ -15,3 +15,7 @@ export const AvatarCleanupJobIdSchema = z.string().min(1);
 export const UserIdSchema = z.string();
 
 export const OwnershipIdSchema = z.string();
+
+export const GardenShareRequestIdSchema = z.string().min(1);
+
+export const GardenShareGrantIdSchema = z.string().min(1);

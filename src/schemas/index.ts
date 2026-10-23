@@ -8,6 +8,8 @@ export {
   OwnershipIdSchema,
   ProfileAvatarUploadIdSchema,
   AvatarCleanupJobIdSchema,
+  GardenShareRequestIdSchema,
+  GardenShareGrantIdSchema,
 } from './models/id.schemas.js';
 export { ErrorSchema } from './errors/error.schema.js';
 export { AnimatedSpriteDtoSchema } from './models/animated-sprite-dto.schema.js';
@@ -62,6 +64,10 @@ export {
 } from './models/avatar-cleanup-job.schema.js';
 export { SignatureSchema } from './models/signature.schema.js';
 export { OwnershipSchema } from './models/ownership.schema.js';
+export { GardenShareRequestSchema } from './models/garden-share-request.schema.js';
+export { GardenShareGrantSchema } from './models/garden-share-grant.schema.js';
+export type { GardenShareRequest } from './models/garden-share-request.schema.js';
+export type { GardenShareGrant } from './models/garden-share-grant.schema.js';
 
 export { ProfileOwnerResponseSchema } from './routes/profile/profile-get.schema.js';
 export type { ProfileOwnerResponse } from './routes/profile/profile-get.schema.js';
@@ -101,6 +107,30 @@ export type {
 } from './routes/profile/profile-avatar-finalize.schema.js';
 export { ProfileAvatarDeleteResponseSchema } from './routes/profile/profile-avatar-delete.schema.js';
 export type { ProfileAvatarDeleteResponse } from './routes/profile/profile-avatar-delete.schema.js';
+export {
+  GardenShareDirectionSchema,
+  CreateGardenShareRequestSchema,
+  GardenShareRequestIdParamsSchema,
+  GardenShareGrantIdParamsSchema,
+  GardenShareListQuerySchema,
+  GardenShareListEntrySchema,
+  GardenShareListResponseSchema,
+  CreateGardenShareRequestResponseSchema,
+  GardenShareActionResponseSchema,
+} from './routes/sharing/garden-sharing.schema.js';
+export type {
+  CreateGardenShareRequest,
+  GardenShareDirection,
+  GardenShareListEntry,
+  GardenShareListResponse,
+  CreateGardenShareRequestResponse,
+  GardenShareActionResponse,
+} from './routes/sharing/garden-sharing.schema.js';
+export {
+  GardenViewParamsSchema,
+  GardenViewResponseSchema,
+} from './routes/garden/garden-view.schema.js';
+export type { GardenViewResponse } from './routes/garden/garden-view.schema.js';
 export {
   DeleteAccountRequestSchema,
   DeleteAccountResponseSchema,

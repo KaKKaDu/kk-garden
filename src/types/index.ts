@@ -7,6 +7,8 @@ export type {
   AvatarCleanupJobId,
   UserId,
   OwnershipId,
+  GardenShareRequestId,
+  GardenShareGrantId,
 } from './id.types.js';
 export type {
   AnimatedSpriteData,
@@ -72,5 +74,9 @@ export type { VisualisationDto } from './visualisation.types.js';
 export type { VisualisationPendingDto } from './visualisation-pending.types.js';
 export type { Signature } from './signature.types.js';
 export type { Ownership } from './ownership.types.js';
+export type {
+  GardenShareRequest,
+  GardenShareGrant,
+} from './garden-sharing.types.js';
 export type { OwnershipVerificationPoint } from '../schemas/models/ownership-verification-point.schema.js';
 export type { OwnershipVerificationResult } from '../schemas/models/ownership-verification-result.schema.js';
