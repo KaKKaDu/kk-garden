@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { FromZod } from '../../../types/common.types.js';
 import { GardenShareGrantIdSchema } from '../../models/id.schemas.js';
 import { VisualisationDtoSchema } from '../../models/visualisation-dto.schema.js';
+import { GardenProfileResponseSchema } from '../profile/profile-garden-view.schema.js';
 
 export const GardenViewParamsSchema = z
   .object({
@@ -12,6 +13,7 @@ export const GardenViewParamsSchema = z
 export const GardenViewResponseSchema = z
   .object({
     garden: VisualisationDtoSchema,
+    profile: GardenProfileResponseSchema,
   })
   .strict();
 
