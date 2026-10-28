@@ -121,6 +121,7 @@ export {
 export type {
   CreateGardenShareRequest,
   GardenShareDirection,
+  GardenShareListQuery,
   GardenShareListEntry,
   GardenShareListResponse,
   CreateGardenShareRequestResponse,

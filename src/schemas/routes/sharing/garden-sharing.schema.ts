@@ -33,8 +33,24 @@ export const GardenShareGrantIdParamsSchema = z
 export const GardenShareListQuerySchema = z
   .object({
     direction: GardenShareDirectionSchema,
+    page: z.coerce
+      .number()
+      .int()
+      .min(1)
+      .max(Number.MAX_SAFE_INTEGER)
+      .default(1),
+    pageSize: z.coerce.number().int().min(1).max(50).default(50),
   })
-  .strict();
+  .strict()
+  .superRefine(({ page, pageSize }, context): void => {
+    if (!Number.isSafeInteger((page - 1) * pageSize)) {
+      context.addIssue({
+        code: 'custom',
+        message: 'Pagination offset exceeds the safe integer range',
+        path: ['page'],
+      });
+    }
+  });
 
 export const GardenShareListEntrySchema = z
   .object({
@@ -48,6 +64,9 @@ export const GardenShareListEntrySchema = z
 export const GardenShareListResponseSchema = z
   .object({
     items: z.array(GardenShareListEntrySchema),
+    page: z.number().int().min(1),
+    pageSize: z.number().int().min(1).max(50),
+    hasNextPage: z.boolean(),
   })
   .strict();
 
@@ -67,6 +86,7 @@ export type CreateGardenShareRequest = FromZod<
   typeof CreateGardenShareRequestSchema
 >;
 export type GardenShareDirection = FromZod<typeof GardenShareDirectionSchema>;
+export type GardenShareListQuery = FromZod<typeof GardenShareListQuerySchema>;
 export type GardenShareListEntry = FromZod<typeof GardenShareListEntrySchema>;
 export type GardenShareListResponse = FromZod<
   typeof GardenShareListResponseSchema
