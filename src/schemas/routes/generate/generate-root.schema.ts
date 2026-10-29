@@ -18,7 +18,7 @@ export const GenerateRootResponseSchema = z.object({
 });
 
 export const GenerateRootQueryStringSchema = z.object({
-  count: z.coerce.number().optional().default(3),
+  count: z.coerce.number().int().min(1).max(10).default(3),
   pendingId: VisualisationPendingIdSchema.optional(),
 });
 
