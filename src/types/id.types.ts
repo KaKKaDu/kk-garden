@@ -7,6 +7,7 @@ import type {
   UserIdSchema,
   VisualisationIdSchema,
   OwnershipIdSchema,
+  GardenPaymentIdSchema,
   VisualisationPendingIdSchema,
   GardenShareRequestIdSchema,
   GardenShareGrantIdSchema,
@@ -29,6 +30,8 @@ export type AvatarCleanupJobId = FromZod<typeof AvatarCleanupJobIdSchema>;
 export type UserId = FromZod<typeof UserIdSchema>;
 
 export type OwnershipId = FromZod<typeof OwnershipIdSchema>;
+
+export type GardenPaymentId = FromZod<typeof GardenPaymentIdSchema>;
 
 export type GardenShareRequestId = FromZod<typeof GardenShareRequestIdSchema>;
 

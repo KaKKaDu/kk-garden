@@ -8,6 +8,7 @@ export {
   OwnershipIdSchema,
   ProfileAvatarUploadIdSchema,
   AvatarCleanupJobIdSchema,
+  GardenPaymentIdSchema,
   GardenShareRequestIdSchema,
   GardenShareGrantIdSchema,
 } from './models/id.schemas.js';
@@ -68,6 +69,24 @@ export { GardenShareRequestSchema } from './models/garden-share-request.schema.j
 export { GardenShareGrantSchema } from './models/garden-share-grant.schema.js';
 export type { GardenShareRequest } from './models/garden-share-request.schema.js';
 export type { GardenShareGrant } from './models/garden-share-grant.schema.js';
+export {
+  GardenPaymentStateSchema,
+  GardenPaymentProviderKindSchema,
+  GardenPaymentRecipientEmailSchema,
+  GardenPaymentTimestampSchema,
+  GardenPaymentSchema,
+} from './models/garden-payment.schema.js';
+
+export {
+  CreateGardenPaymentRequestSchema,
+  GardenPaymentIdParamsSchema,
+  GardenPaymentResponseSchema,
+} from './routes/payments/garden-payment.schema.js';
+export type {
+  CreateGardenPaymentRequest,
+  GardenPaymentIdParams,
+  GardenPaymentResponse,
+} from './routes/payments/garden-payment.schema.js';
 
 export { ProfileOwnerResponseSchema } from './routes/profile/profile-get.schema.js';
 export type { ProfileOwnerResponse } from './routes/profile/profile-get.schema.js';

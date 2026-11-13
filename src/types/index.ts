@@ -7,6 +7,7 @@ export type {
   AvatarCleanupJobId,
   UserId,
   OwnershipId,
+  GardenPaymentId,
   GardenShareRequestId,
   GardenShareGrantId,
 } from './id.types.js';
@@ -78,5 +79,11 @@ export type {
   GardenShareRequest,
   GardenShareGrant,
 } from './garden-sharing.types.js';
+export type {
+  GardenPayment,
+  GardenPaymentState,
+  GardenPaymentProviderKind,
+  GardenPaymentRecipientEmail,
+} from './garden-payment.types.js';
 export type { OwnershipVerificationPoint } from '../schemas/models/ownership-verification-point.schema.js';
 export type { OwnershipVerificationResult } from '../schemas/models/ownership-verification-result.schema.js';
