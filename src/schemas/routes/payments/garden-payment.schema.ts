@@ -14,17 +14,26 @@ export const GardenPaymentIdParamsSchema = z
   })
   .strict();
 
+const GardenPaymentSummarySchema = z
+  .object({
+    paymentId: GardenPaymentIdSchema,
+    state: GardenPaymentStateSchema,
+    isGift: z.boolean(),
+    createdAt: GardenPaymentTimestampSchema,
+    paidAt: GardenPaymentTimestampSchema.nullable(),
+  })
+  .strict();
+
 export const GardenPaymentResponseSchema = z
   .object({
-    payment: z
-      .object({
-        paymentId: GardenPaymentIdSchema,
-        state: GardenPaymentStateSchema,
-        isGift: z.boolean(),
-        createdAt: GardenPaymentTimestampSchema,
-        paidAt: GardenPaymentTimestampSchema.nullable(),
-      })
-      .strict(),
+    payment: GardenPaymentSummarySchema,
+    mockConfirmationEnabled: z.boolean(),
+  })
+  .strict();
+
+export const CurrentGardenPaymentResponseSchema = z
+  .object({
+    payment: GardenPaymentSummarySchema.nullable(),
     mockConfirmationEnabled: z.boolean(),
   })
   .strict();
@@ -34,3 +43,6 @@ export type CreateGardenPaymentRequest = FromZod<
 >;
 export type GardenPaymentIdParams = FromZod<typeof GardenPaymentIdParamsSchema>;
 export type GardenPaymentResponse = FromZod<typeof GardenPaymentResponseSchema>;
+export type CurrentGardenPaymentResponse = FromZod<
+  typeof CurrentGardenPaymentResponseSchema
+>;

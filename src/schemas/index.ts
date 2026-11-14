@@ -81,11 +81,13 @@ export {
   CreateGardenPaymentRequestSchema,
   GardenPaymentIdParamsSchema,
   GardenPaymentResponseSchema,
+  CurrentGardenPaymentResponseSchema,
 } from './routes/payments/garden-payment.schema.js';
 export type {
   CreateGardenPaymentRequest,
   GardenPaymentIdParams,
   GardenPaymentResponse,
+  CurrentGardenPaymentResponse,
 } from './routes/payments/garden-payment.schema.js';
 
 export { ProfileOwnerResponseSchema } from './routes/profile/profile-get.schema.js';
