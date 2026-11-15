@@ -18,7 +18,7 @@ export interface ProfilePalette {
   onSurface: string;
 }
 
-export const DEFAULT_PROFILE_ACCENT_HEX = '#6b9b75';
+export const DEFAULT_PROFILE_ACCENT_HEX = '#7DBE5E';
 
 export const createProfilePalette = (
   accentHex: string = DEFAULT_PROFILE_ACCENT_HEX
