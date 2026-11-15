@@ -18,7 +18,28 @@ export type SpritesheetAssetKey = Extract<
 >;
 
 export const getSpritesheetAsset = (key: SpritesheetAssetKey): string => {
-  return new URL(AssetsMap[key], import.meta.url).href;
+  switch (key) {
+    case 'animation-spritesheet':
+      return new URL(
+        './spritesheets/animation_spritesheet.png',
+        import.meta.url
+      ).href;
+    case 'decorations-spritesheet':
+      return new URL(
+        './spritesheets/decorations_spritesheet.png',
+        import.meta.url
+      ).href;
+    case 'stones-spritesheet':
+      return new URL('./spritesheets/stones_spritesheet.png', import.meta.url)
+        .href;
+    case 'tiles-spritesheet':
+      return new URL('./spritesheets/tiles_spritesheet.png', import.meta.url)
+        .href;
+    default: {
+      const exhaustiveCheck: never = key;
+      throw new Error(`Unsupported spritesheet asset key: ${exhaustiveCheck}`);
+    }
+  }
 };
 
 export const isSpritesheetAssetKey = (
