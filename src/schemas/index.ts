@@ -131,6 +131,7 @@ export type { ProfileAvatarDeleteResponse } from './routes/profile/profile-avata
 export {
   GardenShareDirectionSchema,
   CreateGardenShareRequestSchema,
+  GardenShareLookupResponseSchema,
   GardenShareRequestIdParamsSchema,
   GardenShareGrantIdParamsSchema,
   GardenShareListQuerySchema,
@@ -141,6 +142,7 @@ export {
 } from './routes/sharing/garden-sharing.schema.js';
 export type {
   CreateGardenShareRequest,
+  GardenShareLookupResponse,
   GardenShareDirection,
   GardenShareListQuery,
   GardenShareListEntry,

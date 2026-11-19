@@ -9,6 +9,7 @@ import {
   ProfileDisplayNameSchema,
   ProfileLookupCodeSchema,
 } from '../../models/profile.schema.js';
+import { ProfileLookupCardResponseSchema } from '../profile/profile-lookup-card.schema.js';
 
 export const GardenShareDirectionSchema = z.enum(['incoming', 'outgoing']);
 
@@ -17,6 +18,13 @@ export const CreateGardenShareRequestSchema = z
     lookupCode: ProfileLookupCodeSchema,
   })
   .strict();
+
+export const GardenShareLookupResponseSchema =
+  ProfileLookupCardResponseSchema.extend({
+    targetHasAccessToRequesterGarden: z.boolean(),
+    requesterHasAccessToTargetGarden: z.boolean(),
+    requesterHasPendingRequestToTarget: z.boolean(),
+  }).strict();
 
 export const GardenShareRequestIdParamsSchema = z
   .object({
@@ -84,6 +92,9 @@ export const GardenShareActionResponseSchema = z
 
 export type CreateGardenShareRequest = FromZod<
   typeof CreateGardenShareRequestSchema
+>;
+export type GardenShareLookupResponse = FromZod<
+  typeof GardenShareLookupResponseSchema
 >;
 export type GardenShareDirection = FromZod<typeof GardenShareDirectionSchema>;
 export type GardenShareListQuery = FromZod<typeof GardenShareListQuerySchema>;
