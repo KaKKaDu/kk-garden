@@ -9,6 +9,7 @@ export const VerifyRootRequestSchema = z.object({
 
 export const VerifyRootResponseSchema = z.object({
   success: z.boolean(),
+  percentage: z.number().int().min(0).max(100),
   data: OwnershipVerificationResultSchema,
 });
 
