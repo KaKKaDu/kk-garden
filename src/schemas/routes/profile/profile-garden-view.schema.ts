@@ -5,6 +5,7 @@ import { ProfileAvatarDeliverySchema } from '../../models/profile-avatar-deliver
 import {
   ProfileBioSchema,
   ProfileDisplayNameSchema,
+  ProfileLookupCodeSchema,
 } from '../../models/profile.schema.js';
 
 export const GardenProfileResponseSchema = z
@@ -13,6 +14,7 @@ export const GardenProfileResponseSchema = z
     bio: ProfileBioSchema.optional(),
     accent: ProfileAccentProjectionSchema,
     avatar: ProfileAvatarDeliverySchema.nullable(),
+    lookupCode: ProfileLookupCodeSchema.nullable().optional(),
   })
   .strict();
 
