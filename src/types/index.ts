@@ -82,6 +82,7 @@ export type {
 export type {
   GardenPayment,
   GardenPaymentState,
+  GardenPaymentInvitationStatus,
   GardenPaymentProviderKind,
   GardenPaymentRecipientEmail,
 } from './garden-payment.types.js';

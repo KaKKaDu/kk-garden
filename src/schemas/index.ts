@@ -71,6 +71,7 @@ export type { GardenShareRequest } from './models/garden-share-request.schema.js
 export type { GardenShareGrant } from './models/garden-share-grant.schema.js';
 export {
   GardenPaymentStateSchema,
+  GardenPaymentInvitationStatusSchema,
   GardenPaymentProviderKindSchema,
   GardenPaymentRecipientEmailSchema,
   GardenPaymentTimestampSchema,
@@ -79,12 +80,14 @@ export {
 
 export {
   CreateGardenPaymentRequestSchema,
+  CreateGardenGiftPaymentRequestSchema,
   GardenPaymentIdParamsSchema,
   GardenPaymentResponseSchema,
   CurrentGardenPaymentResponseSchema,
 } from './routes/payments/garden-payment.schema.js';
 export type {
   CreateGardenPaymentRequest,
+  CreateGardenGiftPaymentRequest,
   GardenPaymentIdParams,
   GardenPaymentResponse,
   CurrentGardenPaymentResponse,

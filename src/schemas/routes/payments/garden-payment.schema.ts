@@ -1,12 +1,20 @@
 import { z } from 'zod';
 import type { FromZod } from '../../../types/common.types.js';
 import {
+  GardenPaymentInvitationStatusSchema,
   GardenPaymentStateSchema,
+  GardenPaymentRecipientEmailSchema,
   GardenPaymentTimestampSchema,
 } from '../../models/garden-payment.schema.js';
 import { GardenPaymentIdSchema } from '../../models/id.schemas.js';
 
 export const CreateGardenPaymentRequestSchema = z.object({}).strict();
+
+export const CreateGardenGiftPaymentRequestSchema = z
+  .object({
+    recipientEmail: GardenPaymentRecipientEmailSchema,
+  })
+  .strict();
 
 export const GardenPaymentIdParamsSchema = z
   .object({
@@ -19,6 +27,7 @@ const GardenPaymentSummarySchema = z
     paymentId: GardenPaymentIdSchema,
     state: GardenPaymentStateSchema,
     isGift: z.boolean(),
+    invitationEmailStatus: GardenPaymentInvitationStatusSchema,
     createdAt: GardenPaymentTimestampSchema,
     paidAt: GardenPaymentTimestampSchema.nullable(),
   })
@@ -40,6 +49,9 @@ export const CurrentGardenPaymentResponseSchema = z
 
 export type CreateGardenPaymentRequest = FromZod<
   typeof CreateGardenPaymentRequestSchema
+>;
+export type CreateGardenGiftPaymentRequest = FromZod<
+  typeof CreateGardenGiftPaymentRequestSchema
 >;
 export type GardenPaymentIdParams = FromZod<typeof GardenPaymentIdParamsSchema>;
 export type GardenPaymentResponse = FromZod<typeof GardenPaymentResponseSchema>;

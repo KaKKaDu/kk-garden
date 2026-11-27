@@ -1,6 +1,7 @@
 import type { FromZod } from './common.types.js';
 import type {
   GardenPaymentProviderKindSchema,
+  GardenPaymentInvitationStatusSchema,
   GardenPaymentRecipientEmailSchema,
   GardenPaymentSchema,
   GardenPaymentStateSchema,
@@ -8,6 +9,9 @@ import type {
 
 export type GardenPayment = FromZod<typeof GardenPaymentSchema>;
 export type GardenPaymentState = FromZod<typeof GardenPaymentStateSchema>;
+export type GardenPaymentInvitationStatus = FromZod<
+  typeof GardenPaymentInvitationStatusSchema
+>;
 export type GardenPaymentProviderKind = FromZod<
   typeof GardenPaymentProviderKindSchema
 >;
